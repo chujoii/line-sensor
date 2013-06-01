@@ -3,14 +3,14 @@
 # To read pcb files, the pcb version (or the git source date) must be >= the file version
 FileVersion[20070407]
 
-PCB["" 600000 500000]
+PCB["" 102500 75000]
 
 Grid[2500.0 0 0 1]
-Cursor[600000 0 0.000000]
+Cursor[0 0 0.000000]
 PolyArea[3100.006200]
 Thermal[0.500000]
 DRC[1000 1000 1000 1000 1500 1000]
-Flags("nameonpcb,uniquename,clearnew,locknames")
+Flags("nameonpcb,clearnew,locknames")
 Groups("1,c:2,s:3:4:5:6:7:8")
 Styles["Signal,1000,3600,2000,1000:Power,2500,6000,3500,1000:Fat,4000,6000,3500,1000:Skinny,600,2402,1181,600"]
 
@@ -788,19 +788,15 @@ Symbol['~' 1200]
 )
 Attribute("PCB::grid::unit" "mm")
 
-Element["" "0805xs" "R102" "10k" 217500 175000 -1969 5512 1 78 ""]
+Element["" "M3_plated" "P101" "unknown" 15000 37500 -3000 -3000 0 100 ""]
 (
-	Pad[-1181 -3937 1181 -3937 3000 3937 3394 "2" "2" "square"]
-	Pad[-1181 3937 1181 3937 3000 3937 3394 "1" "1" "square"]
-	ElementLine [3543 -6299 3543 6299 591]
-	ElementLine [-3543 -6299 3543 -6299 591]
-	ElementLine [-3543 -6299 -3543 5118 591]
-	ElementLine [-2362 6299 -3543 5118 591]
-	ElementLine [-2362 6299 3543 6299 591]
+	Pin[0 0 23622 5000 24222 12205 "" "1" "warn,thermal(0S,2S)"]
+	ElementArc [0 0 6800 6800 0 360 1000]
+	ElementArc [0 0 12205 12205 0 360 1000]
 
 	)
 
-Element["" "CONNECTOR_FLAT-1-5" "CONN101" "unknown" 230000 200000 0 0 2 100 ""]
+Element["" "CONNECTOR_FLAT-1-5" "CONN101" "unknown" 57500 57500 0 0 2 100 ""]
 (
 	Pad[-1811 0 10000 0 4000 2000 6000 "1" "1" ""]
 	Pad[-1811 -10000 10000 -10000 4000 2000 6000 "2" "2" ""]
@@ -815,7 +811,19 @@ Element["" "CONNECTOR_FLAT-1-5" "CONN101" "unknown" 230000 200000 0 0 2 100 ""]
 
 	)
 
-Element["" "aot137-back" "U101" "unknown" 197500 167500 0 0 3 100 ""]
+Element["" "0805xs" "R102" "10k" 50000 32500 -1969 5512 1 78 ""]
+(
+	Pad[-1181 -3937 1181 -3937 3000 3937 3394 "2" "2" "square"]
+	Pad[-1181 3937 1181 3937 3000 3937 3394 "1" "1" "square"]
+	ElementLine [3543 -6299 3543 6299 591]
+	ElementLine [-3543 -6299 3543 -6299 591]
+	ElementLine [-3543 -6299 -3543 5118 591]
+	ElementLine [-2362 6299 -3543 5118 591]
+	ElementLine [-2362 6299 3543 6299 591]
+
+	)
+
+Element["" "aot137-back" "U101" "unknown" 35000 25000 0 0 3 100 ""]
 (
 	Pin[3256 12098 12211 2000 12811 11811 "E" "1" ""]
 	Pad[0 20866 0 24409 4000 2000 6000 "K" "4" "edge2"]
@@ -835,43 +843,30 @@ Element["" "aot137-back" "U101" "unknown" 197500 167500 0 0 3 100 ""]
 	ElementLine [-177 14586 -177 14980 2500]
 
 	)
-
-Element["" "M3_plated" "P101" "unknown" 172500 180000 -3000 -3000 0 100 ""]
-(
-	Pin[0 0 23622 5000 24222 12205 "" "1" "thermal(0S)"]
-	ElementArc [0 0 6800 6800 0 360 1000]
-	ElementArc [0 0 12205 12205 0 360 1000]
-
-	)
-Rat[195000 170000 0 200756 179598 1  ""]
+Rat[38256 37098 1 0 0 0  "via"]
 Layer(1 "component")
 (
-	Line[217500 180000 230000 180000 2500 2000 "clearline"]
-	Line[227500 160000 195000 160000 2500 2000 "clearline"]
-	Line[205000 165000 217500 165000 2500 2000 "clearline"]
-	Line[217500 165000 217500 170000 2500 2000 "clearline"]
-	Line[217500 170000 227500 170000 2500 2000 "clearline"]
-	Line[195000 160000 195000 170000 4000 2000 "clearline"]
-	Line[205000 165000 205000 170000 4000 2000 "clearline"]
-	Line[240000 200000 265000 200000 4000 2000 "clearline"]
-	Line[240000 190000 265000 190000 4000 2000 "clearline"]
-	Line[240000 180000 265000 180000 4000 2000 "clearline"]
-	Line[240000 170000 265000 170000 4000 2000 "clearline"]
-	Line[240000 160000 265000 160000 4000 2000 "clearline"]
-	Line[205000 190000 205000 195000 4000 2000 "clearline"]
-	Line[195000 190000 195000 195000 4000 2000 "clearline"]
-	Line[195000 195000 195000 200000 2500 2000 "clearline"]
-	Line[195000 200000 215000 200000 2500 2000 "clearline"]
-	Line[215000 200000 215000 190000 2500 2000 "clearline"]
-	Line[215000 190000 227500 190000 2500 2000 "clearline"]
-	Line[205000 195000 210000 195000 2500 2000 "clearline"]
-	Line[210000 195000 210000 185000 2500 2000 "clearline"]
-	Line[210000 185000 270000 185000 2500 2000 "clearline"]
-	Line[270000 185000 270000 200000 2500 2000 "clearline"]
-	Line[270000 200000 265000 200000 2500 2000 "clearline"]
+	Line[67500 57500 92500 57500 4000 2000 "clearline"]
+	Line[67500 17500 92500 17500 4000 2000 ""]
+	Line[67500 27500 92500 27500 4000 2000 "clearline"]
+	Line[67500 37500 92500 37500 4000 2000 "clearline"]
+	Line[67500 47500 92500 47500 4000 2000 "clearline"]
+	Line[32500 57500 32500 45000 4000 2000 "clearline"]
+	Line[42500 22500 42500 30000 4000 2000 "clearline"]
+	Line[32500 17500 32500 30000 4000 2000 "clearline"]
+	Line[42500 52500 42500 45000 4000 2000 "clearline"]
+	Line[55000 57500 32500 57500 4000 2000 "clearline"]
+	Line[42500 52500 50000 52500 4000 2000 "clearline"]
+	Line[50000 52500 50000 47500 4000 2000 "clearline"]
+	Line[50000 47500 55000 47500 4000 2000 "clearline"]
+	Line[55000 37500 50000 37500 4000 2000 "clearline"]
+	Line[55000 17500 32500 17500 4000 2000 "clearline"]
+	Line[42500 22500 50000 22500 4000 2000 "clearline"]
+	Line[50000 22500 50000 27500 4000 2000 "clearline"]
+	Line[50000 27500 55000 27500 4000 2000 "clearline"]
 	Polygon("clearpoly")
 	(
-		[155000 150000] [280000 150000] [280000 210000] [155000 210000] 
+		[0 0] [102500 0] [102500 75000] [0 75000] 
 	)
 )
 Layer(2 "solder")
@@ -923,11 +918,11 @@ NetList()
 	Net("unnamed_net3" "(unknown)")
 	(
 		Connect("CONN101-2")
-		Connect("U101-4")
+		Connect("U101-3")
 	)
 	Net("unnamed_net4" "(unknown)")
 	(
 		Connect("CONN101-1")
-		Connect("U101-3")
+		Connect("U101-4")
 	)
 )
