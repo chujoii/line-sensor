@@ -8,15 +8,15 @@
 #ifndef black_white_sensor_h
 #define black_white_sensor_h
 
-//#include "Arduino.h"
+#include "Arduino.h"
 //#include "avr/interrupt.h"
 
 class black_white_sensor
 {
 public:
 	black_white_sensor(int pin_sensor_output, int pin_sensor_input, int sensor_delay);
-	int read_analog();
-	int read_digital(int sensor_threshold_level);
+	int read_gray();
+	int read_black_white(int sensor_threshold_level);
 private:
 	int _pin_sensor_output;
 	int _pin_sensor_input;

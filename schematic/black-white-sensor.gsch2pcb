@@ -1,4 +1,4 @@
-schematics line-sensor.sch
+schematics black-white-sensor.sch
 elements-dir /home/chujoii/project/geda/footprints-geda
 elements-dir /home/chujoii/project/geda/footprints-my
-output-name line-sensor
+output-name black-white-sensor
