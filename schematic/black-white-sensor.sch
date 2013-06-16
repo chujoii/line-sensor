@@ -7,7 +7,7 @@ refdes=P101
 T 42400 41100 5 8 0 0 0 0 1
 device=pad
 T 41500 41000 5 10 0 0 0 0 1
-footprint=M3_plated
+footprint=M1k8_plated
 }
 C 43000 40600 1 0 0 gnd-1.sym
 N 42600 41400 43100 41400 4
@@ -48,7 +48,7 @@ device=CONNECTOR_5
 T 52900 46700 5 10 1 1 0 6 1
 refdes=CONN101
 T 53000 45000 5 10 0 1 0 0 1
-footprint=CONNECTOR_FLAT 1 5
+footprint=CONNECTOR_1.27_FLAT 1 5
 }
 T 53100 46400 9 10 1 0 0 0 1
 LED Anode + <10mA
