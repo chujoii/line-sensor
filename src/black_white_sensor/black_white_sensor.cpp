@@ -28,7 +28,7 @@ int black_white_sensor::read_gray()
         delayMicroseconds(_sensor_delay);
         int light_current = analogRead(_pin_sensor_input);
         digitalWrite(_pin_sensor_output, LOW);
-        return (light_current - dark_current);
+        return abs(dark_current - light_current);
 }
 
 int black_white_sensor::read_black_white(int sensor_threshold_level)
@@ -38,5 +38,5 @@ int black_white_sensor::read_black_white(int sensor_threshold_level)
         delayMicroseconds(_sensor_delay);
         int light_current = analogRead(_pin_sensor_input);
         digitalWrite(_pin_sensor_output, LOW);
-        return ((light_current - dark_current) > sensor_threshold_level);
+        return (abs(dark_current - light_current) > sensor_threshold_level);
 }

@@ -15,24 +15,24 @@ black_white_sensor bw_sensor(digital_pin_optocouple_led, analog_pin_optocouple, 
 
 
 int pin_blink_led = 13;
-
+int counter = 0;
 
 void setup()
 {
 	pinMode(pin_blink_led, OUTPUT);
 	digitalWrite(pin_blink_led, LOW);
+	delay(1000);
+	Serial.begin(9600);
 }
 
 
 
 void loop()
 {
-	boolean os = bw_sensor.read_black_white(sensor_threshold);
-	if (os) {
-		digitalWrite(pin_blink_led, HIGH);
-	} else {
-		digitalWrite(pin_blink_led, LOW);
-	}
-	delay(50);
+	int os = bw_sensor.read_gray();
+	Serial.print(counter++);
+	Serial.print(" ");
+	Serial.println(os);
+	delay(100);
 }
 

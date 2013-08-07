@@ -27,7 +27,7 @@ device=RESISTOR
 T 47200 47800 5 10 1 1 270 0 1
 refdes=R102
 T 46900 48000 5 10 1 1 0 0 1
-value=10k
+value=22k
 T 46900 48000 5 10 0 1 0 0 1
 footprint=0805xs
 }
