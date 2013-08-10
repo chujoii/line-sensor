@@ -3,10 +3,10 @@
 # To read pcb files, the pcb version (or the git source date) must be >= the file version
 FileVersion[20070407]
 
-PCB["" 155000 57500]
+PCB["" 180000 62500]
 
-Grid[2500.0 0 0 0]
-Cursor[155000 0 0.000000]
+Grid[2500.0 0 0 1]
+Cursor[0 15000 0.000000]
 PolyArea[3100.006200]
 Thermal[0.500000]
 DRC[1000 1000 1000 1000 1500 1000]
@@ -787,14 +787,14 @@ Symbol['~' 1200]
 	SymbolLine[2000 3500 2500 3000 800]
 )
 Attribute("PCB::grid::unit" "mm")
-Via[63504 15000 6000 2000 0 3500 "" ""]
-Via[70591 22087 6000 2000 0 3500 "" ""]
-Via[66496 42500 6000 2000 0 3500 "" ""]
-Via[59409 35413 6000 2000 0 3500 "" ""]
-Via[70591 7913 6000 2000 0 3500 "" ""]
-Via[59409 49587 6000 2000 0 3500 "" ""]
+Via[86909 54587 6000 2000 0 3500 "" ""]
+Via[93996 47500 6000 2000 0 3500 "" ""]
+Via[98091 24587 6000 2000 0 3500 "" ""]
+Via[91004 17500 6000 2000 0 3500 "" ""]
+Via[98091 10413 6000 2000 0 3500 "" "thermal(0S)"]
+Via[86909 40413 6000 2000 0 3500 "" ""]
 
-Element["" "0805xs" "R202" "unknown" 90000 17500 5512 1969 2 78 ""]
+Element["" "0805xs" "R202" "100k" 120000 22500 5512 1969 2 78 ""]
 (
 	Pad[-3937 -1181 -3937 1181 3000 3937 3394 "2" "2" "square"]
 	Pad[3937 -1181 3937 1181 3000 3937 3394 "1" "1" "square"]
@@ -806,21 +806,50 @@ Element["" "0805xs" "R202" "unknown" 90000 17500 5512 1969 2 78 ""]
 
 	)
 
-Element["" "CONNECTOR_FLAT-1-4" "CONN202" "unknown" 45906 7500 0 0 0 100 ""]
+Element["onsolder" "kp302_to-18" "Q201" "unknown" 125000 40000 -3500 6000 3 100 "auto"]
 (
-	Pad[-11811 30000 0 30000 4000 2000 6000 "4" "4" "edge2"]
-	Pad[-11811 20000 0 20000 4000 2000 6000 "3" "3" "edge2"]
-	Pad[-11811 10000 0 10000 4000 2000 6000 "2" "2" "edge2"]
-	Pad[-11811 0 0 0 4000 2000 6000 "1" "1" "edge2"]
-	ElementLine [-44311 35000 -11811 35000 1000]
-	ElementLine [-44311 5000 -11811 5000 1000]
-	ElementLine [-44311 -5000 -11811 -5000 1000]
-	ElementLine [-44311 -5000 -44311 35000 1000]
-	ElementLine [-11811 -5000 -11811 35000 1000]
+	Pin[-10000 10000 6000 2000 6600 2800 "G" "G" ""]
+	Pin[0 10000 6000 2000 6600 2800 "D" "D" ""]
+	Pin[0 0 6000 2000 6600 2800 "S" "S" "square"]
+	ElementLine [-3000 -11500 -3000 -7500 600]
+	ElementLine [-7000 -11500 -3000 -11500 600]
+	ElementLine [-7000 -11500 -7000 -7500 600]
+	ElementArc [-5000 5000 10500 10500 90 90 600]
+	ElementArc [-5000 5000 10500 10500 180 90 600]
+	ElementArc [-5000 5000 10500 10500 0 90 600]
+	ElementArc [-4999 5001 10501 10501 270 90 600]
+	ElementArc [-5000 5000 12500 12500 90 90 600]
+	ElementArc [-5001 5001 12501 12501 180 90 600]
+	ElementArc [-5000 5000 12500 12500 270 90 600]
+	ElementArc [-5001 5001 12499 12499 0 90 600]
 
 	)
 
-Element["" "CONNECTOR_FLAT-1-5" "CONN201" "unknown" 110905 47500 0 0 2 100 ""]
+Element["" "IRLML2402" "Q202" "unknown" 70000 42500 11000 -2500 2 100 ""]
+(
+	Pad[-300 0 300 0 3400 3000 4000 "G" "G" "square"]
+	Pad[-300 7800 300 7800 3400 3000 4000 "S" "S" "square"]
+	Pad[7900 3900 8500 3900 3400 3000 4000 "D" "D" "square,edge2"]
+	ElementLine [-2900 -2500 11000 -2500 1000]
+	ElementLine [-2900 -2500 -2900 10300 1000]
+	ElementLine [-2900 10300 11000 10300 1000]
+	ElementLine [11000 -2500 11000 10300 1000]
+
+	)
+
+Element["" "0805xs" "R201" "150" 112500 40000 5512 1969 2 78 ""]
+(
+	Pad[-3937 -1181 -3937 1181 3000 3937 3394 "2" "2" "square"]
+	Pad[3937 -1181 3937 1181 3000 3937 3394 "1" "1" "square"]
+	ElementLine [-6299 -3543 6299 -3543 591]
+	ElementLine [-6299 -3543 -6299 3543 591]
+	ElementLine [-6299 3543 5118 3543 591]
+	ElementLine [6299 2362 5118 3543 591]
+	ElementLine [6299 -3543 6299 2362 591]
+
+	)
+
+Element["" "CONNECTOR_FLAT-1-5" "CONN201" "unknown" 135905 52500 0 0 2 100 ""]
 (
 	Pad[-1811 0 10000 0 4000 2000 6000 "1" "1" ""]
 	Pad[-1811 -10000 10000 -10000 4000 2000 6000 "2" "2" ""]
@@ -835,26 +864,19 @@ Element["" "CONNECTOR_FLAT-1-5" "CONN201" "unknown" 110905 47500 0 0 2 100 ""]
 
 	)
 
-Element["onsolder" "kp302_to-18" "Q201" "unknown" 90000 35000 6000 3500 2 100 "auto"]
+Element["" "0805xs" "R205" "6.2" 57500 42500 -5512 -1969 0 78 ""]
 (
-	Pin[10000 10000 6000 2000 6600 2800 "G" "G" "edge2"]
-	Pin[10000 0 6000 2000 6600 2800 "D" "D" "edge2"]
-	Pin[0 0 6000 2000 6600 2800 "S" "S" "square,edge2"]
-	ElementLine [-11500 3000 -7500 3000 600]
-	ElementLine [-11500 3000 -11500 7000 600]
-	ElementLine [-11500 7000 -7500 7000 600]
-	ElementArc [5000 5000 10500 10500 180 90 600]
-	ElementArc [5000 5000 10500 10500 270 90 600]
-	ElementArc [5000 5000 10500 10500 90 90 600]
-	ElementArc [5001 4999 10501 10501 0 90 600]
-	ElementArc [5000 5000 12500 12500 180 90 600]
-	ElementArc [5001 5001 12501 12501 270 90 600]
-	ElementArc [5000 5000 12500 12500 0 90 600]
-	ElementArc [5001 5001 12499 12499 90 90 600]
+	Pad[3937 -1181 3937 1181 3000 3937 3394 "2" "2" "square"]
+	Pad[-3937 -1181 -3937 1181 3000 3937 3394 "1" "1" "square"]
+	ElementLine [-6299 3543 6299 3543 591]
+	ElementLine [6299 -3543 6299 3543 591]
+	ElementLine [-5118 -3543 6299 -3543 591]
+	ElementLine [-6299 -2362 -5118 -3543 591]
+	ElementLine [-6299 -2362 -6299 3543 591]
 
 	)
 
-Element["onsolder" "3329H_trimpot" "R203" "unknown" 65000 15000 -10000 -4000 1 100 "auto"]
+Element["onsolder" "3329H_trimpot" "R203" "100k" 92500 17500 -10000 -4000 1 100 "auto"]
 (
 	Pin[5591 7087 3937 2000 4537 1969 "1" "1" ""]
 	Pin[-1496 0 3937 2000 4537 1969 "3" "3" ""]
@@ -866,7 +888,7 @@ Element["onsolder" "3329H_trimpot" "R203" "unknown" 65000 15000 -10000 -4000 1 1
 
 	)
 
-Element["onsolder" "3329H_trimpot" "R103" "unknown" 65000 42500 10000 4000 3 100 "auto"]
+Element["onsolder" "3329H_trimpot" "R204" "3.3k" 92500 47500 10000 4000 3 100 "auto"]
 (
 	Pin[-5591 -7087 3937 2000 4537 1969 "1" "1" ""]
 	Pin[1496 0 3937 2000 4537 1969 "3" "3" ""]
@@ -878,56 +900,56 @@ Element["onsolder" "3329H_trimpot" "R103" "unknown" 65000 42500 10000 4000 3 100
 
 	)
 
-Element["" "IRLML2402" "Q202" "unknown" 41800 43600 11000 -2500 2 100 ""]
+Element["" "CONNECTOR_FLAT-1-4" "CONN202" "unknown" 45906 12500 0 0 0 100 ""]
 (
-	Pad[-300 0 300 0 3400 3000 4000 "G" "G" "square"]
-	Pad[-300 7800 300 7800 3400 3000 4000 "S" "S" "square"]
-	Pad[7900 3900 8500 3900 3400 3000 4000 "D" "D" "square,edge2"]
-	ElementLine [-2900 -2500 11000 -2500 1000]
-	ElementLine [-2900 -2500 -2900 10300 1000]
-	ElementLine [-2900 10300 11000 10300 1000]
-	ElementLine [11000 -2500 11000 10300 1000]
+	Pad[-11811 30000 0 30000 4000 2000 6000 "4" "4" "edge2"]
+	Pad[-11811 20000 0 20000 4000 2000 6000 "3" "3" "edge2"]
+	Pad[-11811 10000 0 10000 4000 2000 6000 "2" "2" "edge2"]
+	Pad[-11811 0 0 0 4000 2000 6000 "1" "1" "edge2"]
+	ElementLine [-44311 35000 -11811 35000 1000]
+	ElementLine [-44311 5000 -11811 5000 1000]
+	ElementLine [-44311 -5000 -11811 -5000 1000]
+	ElementLine [-44311 -5000 -44311 35000 1000]
+	ElementLine [-11811 -5000 -11811 35000 1000]
 
 	)
 Layer(1 "component")
 (
-	Line[115000 17500 93937 17500 4000 2000 "clearline"]
-	Line[86063 17500 75178 17500 4000 2000 "clearline"]
-	Line[75178 17500 70591 22087 4000 2000 "clearline"]
-	Line[70591 22087 63504 15000 4000 2000 "clearline"]
-	Line[63504 15000 61004 17500 4000 2000 "clearline"]
-	Line[61004 17500 42500 17500 4000 2000 "clearline"]
-	Line[40001 27500 137500 27500 4000 2000 "clearline"]
-	Line[137500 27500 137500 47500 4000 2000 "clearline"]
-	Line[137500 47500 115000 47500 4000 2000 "clearline"]
-	Line[40001 7500 115000 7500 4000 2000 ""]
-	Line[59409 35413 66496 42500 4000 2000 "clearline"]
-	Line[66496 42500 73996 35000 4000 2000 "clearline"]
-	Line[73996 35000 90000 35000 4000 2000 "clearline"]
-	Line[100000 35000 102500 37500 4000 2000 "clearline"]
-	Line[102500 37500 114999 37500 4000 2000 "clearline"]
-	Line[41800 51400 38600 51400 4000 2000 ""]
-	Line[41800 43600 41800 39300 4000 2000 "clearline"]
-	Line[41800 39300 40000 37500 4000 2000 "clearline"]
-	Line[50000 47500 57323 47500 4000 2000 "clearline"]
-	Line[57323 47500 59409 49587 4000 2000 "clearline"]
-	Line[59409 49587 95413 49587 4000 2000 "clearline"]
-	Line[95413 49587 100000 45000 4000 2000 "clearline"]
-	Text[5000 5000 0 100 "GND" "clearline"]
-	Text[5000 15000 0 100 "analog" "clearline"]
-	Text[5000 25000 0 100 "Vcc" "clearline"]
-	Text[5000 35000 0 100 "led" "clearline"]
-	Text[135000 15000 0 100 "analog" "clearline"]
-	Text[142500 5000 0 100 "GND" "clearline"]
-	Text[142500 35000 0 100 "led-" "clearline"]
-	Text[142500 45000 0 100 "led+" "clearline"]
-	Text[142500 25000 0 100 "Vcc" "clearline"]
-	Text[70000 0 0 100 "xbee-adapter" "clearline"]
-	Text[2500 45000 0 100 "chujoii" "clearline"]
-	Text[22500 45000 0 100 "2013" "clearline"]
+	Line[140000 52500 127500 52500 4000 2000 "clearline"]
+	Line[127500 52500 125000 50000 4000 2000 "clearline"]
+	Line[140000 12500 127500 12500 4000 2000 ""]
+	Line[140000 32500 140000 42500 4000 2000 "clearline"]
+	Line[140000 42500 140000 42500 4000 2000 "clearline"]
+	Line[116437 40000 125000 40000 4000 2000 "clearline"]
+	Line[93996 47500 86909 54587 4000 2000 "clearline"]
+	Line[91004 17500 98091 24587 4000 2000 "clearline"]
+	Line[108563 40000 87322 40000 4000 2000 "clearline"]
+	Line[87322 40000 86909 40413 4000 2000 "clearline"]
+	Line[123937 22500 140000 22500 4000 2000 "clearline"]
+	Line[40000 32500 140000 32500 4000 2000 "clearline"]
+	Line[53563 42500 40000 42500 4000 2000 "clearline"]
+	Line[61437 42500 70000 42500 4000 2000 "clearline"]
+	Line[78200 46400 81800 50000 4000 2000 "clearline"]
+	Line[81800 50000 115000 50000 4000 2000 "clearline"]
+	Line[70000 50300 62800 50300 4000 2000 ""]
+	Line[40000 22500 116063 22500 4000 2000 "clearline"]
+	Line[40000 12500 52500 12500 4000 2000 ""]
+	Text[157500 20000 0 100 "analog" "clearline"]
+	Text[165000 10000 0 100 "GND" "clearline"]
+	Text[162500 40000 0 100 "led a" "clearline"]
+	Text[165000 30000 0 100 "Vcc" "clearline"]
+	Text[105000 2500 0 100 "xbee-adapter" "clearline"]
+	Text[50000 2500 0 100 "b-w-sensor" "clearline"]
+	Text[162500 50000 0 100 "led c" "clearline"]
+	Text[5000 10000 0 100 "GND" "clearline"]
+	Text[5000 20000 0 100 "analog" "clearline"]
+	Text[5000 30000 0 100 "Vcc" "clearline"]
+	Text[5000 40000 0 100 "led" "clearline"]
+	Text[2500 50000 0 100 "chujoii" "clearline"]
+	Text[22500 50000 0 100 "2013" "clearline"]
 	Polygon("clearpoly")
 	(
-		[0 0] [155000 0] [155000 57500] [0 57500] 
+		[0 0] [180000 0] [180000 62500] [0 62500] 
 	)
 )
 Layer(2 "solder")
@@ -969,7 +991,8 @@ NetList()
 	Net("unnamed_net1" "(unknown)")
 	(
 		Connect("CONN201-2")
-		Connect("Q201-D")
+		Connect("CONN201-3")
+		Connect("CONN202-3")
 	)
 	Net("unnamed_net2" "(unknown)")
 	(
@@ -979,8 +1002,7 @@ NetList()
 	Net("unnamed_net3" "(unknown)")
 	(
 		Connect("CONN201-1")
-		Connect("CONN201-3")
-		Connect("CONN202-3")
+		Connect("Q201-D")
 	)
 	Net("unnamed_net4" "(unknown)")
 	(
@@ -993,17 +1015,27 @@ NetList()
 	(
 		Connect("Q201-G")
 		Connect("Q202-D")
-		Connect("R103-2")
+		Connect("R204-2")
+		Connect("R204-3")
 	)
 	Net("unnamed_net6" "(unknown)")
 	(
 		Connect("Q201-S")
-		Connect("R103-1")
-		Connect("R103-3")
+		Connect("R201-1")
 	)
 	Net("unnamed_net7" "(unknown)")
 	(
-		Connect("CONN202-4")
 		Connect("Q202-G")
+		Connect("R205-2")
+	)
+	Net("unnamed_net8" "(unknown)")
+	(
+		Connect("CONN202-4")
+		Connect("R205-1")
+	)
+	Net("unnamed_net9" "(unknown)")
+	(
+		Connect("R201-2")
+		Connect("R204-1")
 	)
 )
