@@ -29,7 +29,7 @@ refdes=R202
 T 46900 43500 5 10 0 1 0 0 1
 footprint=0805xs
 T 46900 43500 5 10 1 1 0 0 1
-value=275k
+value=175k
 }
 C 46900 42000 1 270 0 resistor-variable-2.sym
 {
