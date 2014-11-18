@@ -1,12 +1,12 @@
 /*
-  black_white_sensor.cpp - Library for black_white_sensor.
+  line_sensor.cpp - Library for line_sensor.
   Created by Roman V. Prikhodchenko, 2013.06(jun).01
   Released into the GPLv3.
  */
 
-#include <black_white_sensor.h>
+#include <line_sensor.h>
 
-black_white_sensor::black_white_sensor(int pin_sensor_output, int pin_sensor_input, int sensor_delay)
+line_sensor::line_sensor(int pin_sensor_output, int pin_sensor_input, int sensor_delay)
 {
 	_pin_sensor_output = pin_sensor_output;
 	_pin_sensor_input = pin_sensor_input;
@@ -21,7 +21,7 @@ black_white_sensor::black_white_sensor(int pin_sensor_output, int pin_sensor_inp
 
 
 
-int black_white_sensor::read_gray()
+int line_sensor::read_gray()
 {
         digitalWrite(_pin_sensor_output, HIGH);
         int light_current = analogRead(_pin_sensor_input);
@@ -34,7 +34,7 @@ int black_white_sensor::read_gray()
         return abs(dark_current - light_current);
 }
 
-int black_white_sensor::read_black_white(int sensor_threshold_level)
+int line_sensor::read_black_white(int sensor_threshold_level)
 {
         digitalWrite(_pin_sensor_output, HIGH);
         int light_current = analogRead(_pin_sensor_input);

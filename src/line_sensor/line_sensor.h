@@ -1,20 +1,20 @@
 /*
-  black_white_sensor.h - Library for black_white_sensor.
+  line_sensor.h - Library for line_sensor.
   Created by Roman V. Prikhodchenko, 2013.06(jun).01
   Released into the GPLv3.
  */
 
 
-#ifndef black_white_sensor_h
-#define black_white_sensor_h
+#ifndef line_sensor_h
+#define line_sensor_h
 
 #include "Arduino.h"
 //#include "avr/interrupt.h"
 
-class black_white_sensor
+class line_sensor
 {
 public:
-	black_white_sensor(int pin_sensor_output, int pin_sensor_input, int sensor_delay);
+	line_sensor(int pin_sensor_output, int pin_sensor_input, int sensor_delay);
 	int read_gray();
 	int read_black_white(int sensor_threshold_level);
 private:
