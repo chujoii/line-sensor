@@ -1,4 +1,4 @@
 schematics line-sensor.sch
-elements-dir /home/chujoii/project/geda/footprints-geda
-elements-dir /home/chujoii/project/geda/footprints-my
+elements-dir /home/chujoii/project/geda-helper/footprints-geda
+elements-dir /home/chujoii/project/geda-helper/footprints-my
 output-name line-sensor
