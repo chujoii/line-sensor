@@ -23,26 +23,21 @@ line_sensor::line_sensor(int pin_sensor_output, int pin_sensor_input, int sensor
 
 int line_sensor::read_gray()
 {
+	// led ON
         digitalWrite(_pin_sensor_output, HIGH);
+        delayMicroseconds(_sensor_delay);
         int light_current = analogRead(_pin_sensor_input);
 
-        delayMicroseconds(_sensor_delay);
 
+	// led OFF => no power consumption
         digitalWrite(_pin_sensor_output, LOW);
+        delayMicroseconds(_sensor_delay);
         int dark_current = analogRead(_pin_sensor_input);
 
-        return abs(dark_current - light_current);
+        return (dark_current - light_current);
 }
 
 int line_sensor::read_black_white(int sensor_threshold_level)
 {
-        digitalWrite(_pin_sensor_output, HIGH);
-        int light_current = analogRead(_pin_sensor_input);
-
-        delayMicroseconds(_sensor_delay);
-
-        digitalWrite(_pin_sensor_output, LOW);
-        int dark_current = analogRead(_pin_sensor_input);
-
-        return (abs(dark_current - light_current) > sensor_threshold_level);
+        return (line_sensor::read_gray() > sensor_threshold_level);
 }
