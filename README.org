@@ -45,5 +45,7 @@ Author: Roman V. Prikhodchenko <chujoii@gmail.com>
 
 
 * Dependences:
+** for graph from examples/gray_sensor_test/gr.py:
+python, gnuplot, gnuplot-py
   
 
